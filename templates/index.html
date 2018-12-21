@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+        <meta charset=utf-8 />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elrich Bachman</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+      <script>
+
+        function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah')
+                            .attr('src', e.target.result);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+      </script>
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hotdog Not Hotdog
+      </h1>
+        <br/>
+      <p class="subtitle">
+        Inspired by <strong>Jian Yang</strong>!
+      </p>
+      <div class="container has-text-centered">
+          <br/><br/>
+          <form method=post enctype=multipart/form-data>
+                    <br/><br/>
+              <p><input type=file name=file onchange="readURL(this);">
+                    <br/><br/>
+                    <img id="blah" src="#" alt="your image" />
+                    <br/><br/>
+                 <input type=submit value=Upload>
+            </form>
+          <br/><br/>
+          <p class="title">Results</p>
+          <p>Hotdog Percent Chance: {{ hot_dog }}</p>
+          <p>Not Hotdog Percent Chance: {{ not_hot_dog }}</p>
+          <p class="title is-1" style="color:{{ color }};">Verdict: {{ verdict }}</p>
+        </div>
+    </div>
+  </section>
+  </body>
+</html>
